@@ -7,9 +7,10 @@
 
 [web]
   port = 8910
-  apiProxyPath = "/.netlify/functions"
+  apiProxyPath = "/api"
+  experimentalFastRefresh = true
 [api]
   port = 8911
   schemaPath = "./api/db/schema.prisma"
 [browser]
-  open = true
+  open = false
