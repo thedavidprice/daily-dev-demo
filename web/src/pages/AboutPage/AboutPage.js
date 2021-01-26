@@ -1,4 +1,3 @@
-import { Link, routes } from '@redwoodjs/router'
 import BlogLayout from 'src/layouts/BlogLayout'
 
 const AboutPage = () => {
