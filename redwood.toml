@@ -8,7 +8,6 @@
 [web]
   port = 8910
   apiProxyPath = "/api"
-  experimentalFastRefresh = true
 [api]
   port = 8911
   schemaPath = "./api/db/schema.prisma"
