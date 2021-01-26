@@ -1,8 +1,6 @@
 import { useMutation, useFlash } from '@redwoodjs/web'
 import { Link, routes, navigate } from '@redwoodjs/router'
 
-import { QUERY } from 'src/components/PostsCell'
-
 const DELETE_POST_MUTATION = gql`
   mutation DeletePostMutation($id: Int!) {
     deletePost(id: $id) {
@@ -63,10 +61,6 @@ const Post = ({ post }) => {
             <tr>
               <th>Title</th>
               <td>{post.title}</td>
-            </tr>
-            <tr>
-              <th>Author</th>
-              <td>{post.author}</td>
             </tr>
             <tr>
               <th>Body</th>

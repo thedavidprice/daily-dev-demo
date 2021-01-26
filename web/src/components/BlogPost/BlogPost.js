@@ -7,7 +7,6 @@ const BlogPost = ({ post }) => {
         <h2 className="text-xl text-blue-700 font-semibold">
           <Link to={routes.blogPost({ id: post.id })}>{post.title}</Link>
         </h2>
-        <h3 className="italic font-light">{post.author}</h3>
       </header>
       <div className="mt-2 text-gray-900 font-light">{post.body}</div>
     </article>

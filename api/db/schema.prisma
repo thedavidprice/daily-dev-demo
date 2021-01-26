@@ -14,7 +14,6 @@ generator client {
 model Post {
   id        Int      @id @default(autoincrement())
   title     String
-  author    String   @default("anonymous")
   body      String
   createdAt DateTime @default(now())
 }
