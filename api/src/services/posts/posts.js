@@ -1,4 +1,5 @@
 import { db } from 'src/lib/db'
+// import { requireAuth } from 'src/lib/auth'
 
 export const posts = () => {
   return db.post.findMany()

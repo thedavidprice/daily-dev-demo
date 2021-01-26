@@ -1,45 +1,16 @@
-import { posts, post, createPost, updatePost, deletePost } from './posts'
+import { posts, post } from './posts'
 
 describe('posts', () => {
-  scenario('returns all posts', async (scenario) => {
-    const result = await posts()
+  scenario('returns a list of posts', async (scenario) => {
+    const list = await posts()
 
-    expect(result.length).toEqual(Object.keys(scenario.post).length)
+    expect(list.length).toEqual(Object.keys(scenario.post).length)
+    expect(list[0].title).toEqual(scenario.post.first.title)
   })
 
-  scenario('returns a single post', async (scenario) => {
-    const result = await post({ id: scenario.post.one.id })
+  scenario('returns a single post by ID', async (scenario) => {
+    const record = await post({ id: scenario.post.first.id })
 
-    expect(result).toEqual(scenario.post.one)
-  })
-
-  scenario('creates a post', async (scenario) => {
-    const result = await createPost({
-      input: {
-        name: 'String',
-        body: 'String',
-        postId: scenario.post.one.post.id,
-      },
-    })
-
-    expect(result.name).toEqual('String')
-    expect(result.body).toEqual('String')
-  })
-
-  scenario('updates a post', async (scenario) => {
-    const original = await post({ id: scenario.post.one.id })
-    const result = await updatePost({
-      id: original.id,
-      input: { name: 'String7403093' },
-    })
-
-    expect(result.name).toEqual('String7403093')
-  })
-
-  scenario('deletes a post', async (scenario) => {
-    const original = await deletePost({ id: scenario.post.one.id })
-    const result = await post({ id: original.id })
-
-    expect(result).toEqual(null)
+    expect(record.title).toEqual(scenario.post.first.title)
   })
 })
