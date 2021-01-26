@@ -7,7 +7,7 @@
 
 [web]
   port = 8910
-  apiProxyPath = "/.netlify/functions"
+  apiProxyPath = "/api"
   experimentalFastRefresh = true
 [api]
   port = 8911
